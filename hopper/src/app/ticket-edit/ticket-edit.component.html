@@ -1,0 +1,36 @@
+<div class="surface-card shadow-2 border-round my-6 mx-6 p-4">
+  <!-- surface-card p-4 shadow-2 border-round w-4 m-auto mt-8 min-w-min -->
+  <!-- w-full h-auto lg:w-4 justify-content-center align-items-center -->
+  <div
+    id="buttonContainer"
+    class="surface-card shadow-2 border-round flex justify-content-end flex-wrap"
+  >
+    <button
+      pButton
+      pRipple
+      label="Sign In"
+      icon="pi pi-user"
+      class="w-full min-w-min max-w-min"
+    ></button>
+  </div>
+  <div
+    id="ticketInfoHeaderContainer"
+    class="surface-card shadow-2 border-round flex justify-content-around align-content-end"
+  >
+    <!-- @if (user.userType === 'admin') {
+    <p>ADMIN LOGGED IN. THIS WORKS</p>
+    } -->
+    <div class="">s</div>
+    <p-card
+      styleClass="mypcard px-3 select-none"
+      [ngStyle]="getTicketStatusButtonStyling()"
+    >
+      Ticket Status: {{ ticketStatus }}
+    </p-card>
+    <p-card styleClass="mypcard">Other Related information</p-card>
+    <p-card styleClass="mypcard">Date of Ticket Creation</p-card>
+  </div>
+  <div class="text-center mb-5">
+    <p>ticket-edit works!</p>
+  </div>
+</div>
