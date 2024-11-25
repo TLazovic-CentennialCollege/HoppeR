@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { PrimengModule } from '../../primeng.module';
 
 //my imports
-import { UserService } from '../services/user.service';
-import { RouterService } from '../services/RouterService';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +18,7 @@ export class LoginComponent {
   @Input({ required: true }) username!: string;
   @Input({ required: true }) password!: string;
 
-  userService = inject(UserService);
-  routerService = inject(RouterService);
+  loginService = inject(LoginService);
 
   onLoginAttempt() {
     // start login process
@@ -30,15 +28,7 @@ export class LoginComponent {
         '\n-password: ' +
         this.password
     );
-    if (
-      this.userService.authenticateUserLoginAndReturnResult(
-        this.username,
-        this.password
-      )
-    ) {
-      //reroute to next page CURRENTLY SET TO EDITTICKET COMPONENT
-      this.routerService.navigateToTicketEdit();
-    }
+    this.loginService.authenticateUserLogin(this.username, this.password);
   }
 
   // when user opts to press enter instead of clicking login button
