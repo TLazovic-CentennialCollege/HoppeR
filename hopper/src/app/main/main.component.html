@@ -67,7 +67,26 @@
         <i class="pi pi-ticket" style="font-size: 20px; margin-right: 10px;"></i>
         {{ ticket.title }}
       </h4>
+
+      <!-- Ticket Description -->
       <p style="color: #6c757d; font-size: 16px;">{{ ticket.description }}</p>
+
+      <!-- Ticket Status -->
+      <p
+        [ngStyle]="{
+          color:
+            ticket.status === 'open'
+              ? 'blue'
+              : ticket.status === 'closed'
+              ? 'red'
+              : ticket.status === 'attention required'
+              ? 'green'
+              : 'black'
+        }"
+        style="font-size: 16px; font-weight: bold; margin-top: 10px;"
+      >
+        Status: {{ ticket.status }}
+      </p>
 
       <!-- Edit and Delete Buttons -->
       <div style="margin-top: 15px; display: flex; justify-content: space-between;">
@@ -122,5 +141,15 @@
     >
       <i class="pi pi-plus" style="margin-right: 5px;"></i> Create New Ticket
     </button>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showDeleteModal" class="modal">
+  <div class="modal-content">
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete this ticket?</p>
+    <button (click)="confirmDelete()">Yes</button>
+    <button (click)="cancelDelete()">No</button>
   </div>
 </div>
