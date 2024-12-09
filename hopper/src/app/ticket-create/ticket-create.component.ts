@@ -14,21 +14,18 @@ import { TicketService } from '../services/ticket.service';
 import { Ticket } from '../services/ticket.model';
 
 @Component({
-  selector: 'app-ticket-edit',
+  selector: 'app-ticket-create',
   standalone: true,
   imports: [PrimengModule, NgStyle, NgClass],
-  templateUrl: './ticket-edit.component.html',
-  styleUrl: './ticket-edit.component.css',
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './ticket-create.component.html',
+  styleUrl: './ticket-create.component.css',
 })
-export class TicketEditComponent {
+export class TicketCreateComponent {
   private userService = inject(UserService);
   private routerService = inject(RouterService);
   private ticketService = inject(TicketService);
-  // @Input({ required: true }) ticketStatus!: string;
-  // statusEnum = StatusEnum;
-  // user = this.userService.getLoggedInUser();
-  // @Input({ required: true }) ticket!: Ticket; // used in issue #10 pass ticket object to editTicket component
+
+  user = this.userService.getLoggedInUser;
   private dateObj = new Date();
   ticket = {
     id: '100',
@@ -50,28 +47,23 @@ export class TicketEditComponent {
       this.dateObj.getSeconds(),
   };
 
-  getTicketStatusButtonStyling() {
-    // let styleOBJ = { background-color: 'green' };
-    // if (this.ticketStatus == this.statusEnum.AttentionRequired) {
-    //   styleOBJ = { background-color: 'yellow' };
-    // }
-    // return styleOBJ;
-  }
-
-  onStatusLabelClick() {
-    if (this.ticket.status == StatusEnum.AttentionRequired) {
-      this.ticket.status = StatusEnum.Open;
-    } else if (this.ticket.status == StatusEnum.Open) {
-      this.ticket.status = StatusEnum.AttentionRequired;
-    }
-  }
+  targetEmployeeID!: number;
 
   onReturnButtonClick() {
     // This currently discards/does not save in progress ticket
+    console.log('event: onReturnButtonClick');
     this.routerService.navigateToHome();
   }
 
-  onEscalateClick() {}
-  onCloseTicketClick() {}
-  onCreateButtonClick() {}
+  onDiscardButtonClick() {
+    // This currently discards/does not save in progress ticket
+    console.log('event: onDiscardButtonClick');
+    this.onReturnButtonClick();
+  }
+
+  onCompleteTicketCreationButtonClick() {
+    // This currently discards/does not save in progress ticket
+    // this.onReturnButtonClick();
+    console.log('event: onCompleteTicketCreationButtonClick');
+  }
 }

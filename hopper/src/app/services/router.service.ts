@@ -23,7 +23,7 @@ export class RouterService {
   }
 
   navigateToTicketCreation() {
-    this.router.navigate(['/ticketcreation']);
+    this.router.navigate(['/ticketcreate']);
   }
 
   navigateToTicketEdit() {
