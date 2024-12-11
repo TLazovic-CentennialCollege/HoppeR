@@ -1,0 +1,26 @@
+<div class="ticket-container">
+    <h1>Close Ticket</h1>
+    <div class="ticket-details">
+      <p><strong>Ticket ID:</strong> #12345</p>
+      <p><strong>Created By:</strong> Mr. James Bond</p>
+      <p><strong>Status:</strong> Open</p>
+    </div>
+  
+    <form>
+      <div class="form-group">
+        <label for="closure-notes">Closure Notes</label>
+        <textarea
+          id="closure-notes"
+          name="closure-notes"
+          rows="5"
+          placeholder="Add any additional details for ticket closure"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Close Ticket</button>
+    </form>
+  
+    <div style="text-align: center; margin-top: 20px;">
+      <a routerLink="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+  </div>
+  

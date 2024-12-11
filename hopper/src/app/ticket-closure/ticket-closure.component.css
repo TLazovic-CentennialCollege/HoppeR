@@ -1,0 +1,74 @@
+.ticket-container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .ticket-container h1 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticket-details p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333;
+  }
+  
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #6c63ff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5750e8;
+  }
+  
+  .btn-secondary {
+    color: #6c63ff;
+    text-decoration: none;
+  }
+  
+  .btn-secondary:hover {
+    text-decoration: underline;
+  }
+  
