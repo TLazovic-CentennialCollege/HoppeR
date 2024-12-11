@@ -4,6 +4,8 @@ import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
 import { TicketEscalationComponent } from './ticket-escalation/ticket-escalation.component';
 import { MainComponent } from './main/main.component';
 import { TicketCreateComponent } from './ticket-create/ticket-create.component';
+import { SettingsComponent } from './settings/settings.component';
+import { TicketClosureComponent } from './ticket-closure/ticket-closure.component';
 
 export const routes: Routes = [
   {
@@ -16,10 +18,11 @@ export const routes: Routes = [
     path: 'home',
     component: MainComponent,
   },
-  // {
-  //   path: 'settings',
-  //   component: TicketEditComponent,
-  // },
+   {
+     path: 'settings',
+     component: SettingsComponent,
+  },
+
   {
     path: 'ticketcreate',
     component: TicketCreateComponent,
@@ -36,14 +39,21 @@ export const routes: Routes = [
   //   path: 'messageCreation',
   //   component: MessageCreationComponent,
   // },
-  // {
-  //   path: 'ticketClosure',
-  //   component: TicketClosureComponent,
-  // },
+
+   {
+    path: 'ticketClosure',
+    component: TicketClosureComponent,
+   },
   {
     path: 'ticketEscalation',
     component: TicketEscalationComponent,
   },
+
+  {
+    path: 'dashboard',
+    component: MainComponent,
+  },
+  
 ];
 
 // Not going to use Modules(for routing)
